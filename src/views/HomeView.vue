@@ -1,3 +1,5 @@
-<script setup></script>
-
-<template></template>
+<template>
+  <main>
+    <p>contentcontentcontentcontentcontentcontent</p>
+  </main>
+</template>

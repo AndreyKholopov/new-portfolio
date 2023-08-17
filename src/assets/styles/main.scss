@@ -1,0 +1,36 @@
+@import './normilize.css';
+
+// media sizes
+// @media (max-width: 480px) {}
+
+:root {
+  // ligth theme
+  --bg-color: #f9f9f9;
+  --nav-color: #e9e9e9;
+  --font-color: #213547;
+  --font-accent-color: rgba(60, 60, 60, 0.7);
+
+  // colors
+  --active-color: #42b883;
+
+  &.dark-theme {
+    // dark theme
+    --bg-color: #1a1a1a;
+    --nav-color: #4f4f4f;
+    --font-color: rgba(235, 235, 235, 0.6);
+    --font-accent-color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+#app {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+main {
+  background: var(--bg-color);
+  min-height: calc(100vh - 64px);
+  flex-grow: 1;
+  padding: 32px;
+}

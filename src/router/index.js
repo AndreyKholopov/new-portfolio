@@ -8,6 +8,25 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        name: {
+          ru: 'Домашняя страница',
+          en: 'Home page',
+        },
+        icon: 'house',
+      },
+    },
+    {
+      path: '/1',
+      name: 'home1',
+      component: HomeView,
+      meta: {
+        name: {
+          ru: 'Домашняя страница',
+          en: 'Home page',
+        },
+        icon: 'house',
+      },
     },
   ],
 })
