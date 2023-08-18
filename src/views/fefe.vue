@@ -6,10 +6,10 @@
 
 <style scoped>
 .r {
-  background: #00f;
+  background: #f00;
   padding: 32px;
   position: absolute;
   min-width: calc(100% - 64px);
-  min-height: calc(100% - 64px);
+  min-height: calc(200% - 64px);
 }
 </style>

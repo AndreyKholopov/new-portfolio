@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import fefe from '@/views/fefe.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior() {
+    return { top: 0, behavior: 'smooth' }
+  },
   routes: [
     {
       path: '/',
@@ -19,7 +23,7 @@ const router = createRouter({
     {
       path: '/1',
       name: 'home1',
-      component: HomeView,
+      component: fefe,
       meta: {
         name: {
           ru: 'Домашняя страница',
@@ -30,5 +34,7 @@ const router = createRouter({
     },
   ],
 })
+
+router.getRoutes().forEach((route, index) => (route.meta.index = index))
 
 export default router

@@ -17,16 +17,14 @@ export default {
 
   data() {
     return {
-      shearBlockWidth: 0,
+      shearBlockWidth: 50,
       isMobile: false,
     }
   },
 
   mounted() {
     this.checkMobile()
-    onresize = () => {
-      this.checkMobile()
-    }
+    onresize = () => this.checkMobile()
   },
 
   methods: {
@@ -54,7 +52,7 @@ export default {
     v-if="isMobile"
     class="nav__open-button"
     :icon="['fas', isOpen ? 'xmark' : 'bars']"
-    @click="() => isOpen = !isOpen"
+    @click="() => (isOpen = !isOpen)"
   />
 
   <aside class="nav__wrap" :class="{ nav__wrap_active: isOpen }" ref="nav">
@@ -88,7 +86,7 @@ export default {
   height: calc(100% - 64px);
 
   &__open-button {
-    position: absolute;
+    position: fixed;
     top: 12px;
     left: 12px;
     color: var(--font-color);

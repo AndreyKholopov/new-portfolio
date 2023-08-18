@@ -1,6 +1,6 @@
 import '@/assets/styles/main.scss'
 
-import { createApp } from 'vue'
+import { createApp, h } from 'vue'
 import App from './App.vue'
 import router from './router'
 
@@ -27,6 +27,7 @@ app.config.globalProperties.$lang = createApp({
       this.value = newValue
     },
   },
+  render: () => h('div'),
 }).mount(document.createElement('div'))
 
 app.use(router)

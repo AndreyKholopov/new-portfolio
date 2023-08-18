@@ -98,14 +98,14 @@ export default {
 
 <style lang="scss">
 .switch-color {
-  position: absolute;
+  position: fixed;
   top: 8px;
   right: 8px;
   z-index: 100;
 }
 
 .switch-lang {
-  position: absolute;
+  position: fixed;
   top: 52px;
   right: 8px;
   z-index: 100;
