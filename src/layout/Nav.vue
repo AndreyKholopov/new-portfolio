@@ -62,6 +62,7 @@ export default {
         :key="item.name"
         :to="{ name: item.name }"
         class="nav__link"
+        @click="() => (isOpen = !isOpen)"
       >
         <font-awesome-icon :icon="['fas', item.meta.icon]" />
 
