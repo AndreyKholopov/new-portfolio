@@ -1,13 +1,11 @@
 <script>
+import { nextTick } from 'vue'
+
 export default {
   props: {
     list: {
       type: Array,
       default: [],
-    },
-    mobile: {
-      type: Number,
-      default: 480,
     },
     isOpen: {
       type: Boolean,
@@ -18,24 +16,26 @@ export default {
   data() {
     return {
       shearBlockWidth: 50,
-      isMobile: false,
     }
   },
 
   mounted() {
-    this.checkMobile()
-    onresize = () => this.checkMobile()
+    if (!this.$isMobile.value) this.changeShearBlockWidth()
+  },
+
+  watch: {
+    '$isMobile.value': {
+      handler(val) {
+        if (!val) this.changeShearBlockWidth()
+      },
+      deep: true,
+    },
   },
 
   methods: {
-    checkMobile() {
-      window.innerWidth > this.mobile
-        ? (this.isMobile = false)
-        : (this.isMobile = true)
-
-      setTimeout(() => {
-        if (!this.isMobile) this.shearBlockWidth = this.$refs.nav.offsetWidth
-      }, 0)
+    async changeShearBlockWidth() {
+      await nextTick()
+      this.shearBlockWidth = this.$refs.nav.offsetWidth
     },
   },
 }
@@ -43,13 +43,13 @@ export default {
 
 <template>
   <div
-    v-if="!isMobile"
+    v-if="!this.$isMobile.value"
     class="shear-block"
-    :style="{ width: `${shearBlockWidth}px` }"
+    :style="{ minWidth: `${shearBlockWidth}px` }"
   ></div>
 
   <font-awesome-icon
-    v-if="isMobile"
+    v-if="this.$isMobile.value"
     class="nav__open-button"
     :icon="['fas', isOpen ? 'xmark' : 'bars']"
     @click="() => (isOpen = !isOpen)"
@@ -63,9 +63,11 @@ export default {
         :to="{ name: item.name }"
         class="nav__link"
       >
-        <font-awesome-icon :icon="['fas', `${item.meta.icon}`]" />
+        <font-awesome-icon :icon="['fas', item.meta.icon]" />
 
-        <span v-if="isMobile">{{ item.meta.name[this.$lang.value] }}</span>
+        <span v-if="this.$isMobile.value">{{
+          item.meta.name[this.$lang.value]
+        }}</span>
       </RouterLink>
     </nav>
   </aside>
@@ -81,17 +83,17 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  padding: 32px 16px;
+  gap: 26px;
+  padding: 32px 8px;
   height: calc(100% - 64px);
 
   &__open-button {
     position: fixed;
-    top: 12px;
-    left: 12px;
-    color: var(--font-color);
-    width: 32px;
-    height: 32px;
+    top: 10px;
+    left: 10px;
+    color: var(--title-color);
+    width: 30px;
+    height: 30px;
     z-index: 1100;
   }
 
@@ -108,7 +110,7 @@ export default {
     @media (max-width: 480px) {
       width: 100vw;
       transform: translate(-100%);
-      transition: background-color 0.5s, opacity 0.5s, transform 0.3s ease;
+      transition: transform 0.3s ease;
 
       &_active {
         transform: translate(0);
@@ -118,18 +120,21 @@ export default {
 
   &__link {
     transition: color 0.25s;
-    color: var(--font-color);
+    color: var(--title-color);
+    padding: 8px;
 
     span {
       margin-left: 8px;
     }
 
     &:hover {
-      color: var(--font-accent-color);
+      color: var(--nav-active-color);
     }
 
     &.router-link-exact-active {
-      color: var(--active-color);
+      color: var(--nav-active-color);
+      text-decoration: underline;
+      font-weight: bold;
     }
   }
 }

@@ -1,24 +1,37 @@
 @import './normilize.css';
-
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap');
 // media sizes
 // @media (max-width: 480px) {}
 
 :root {
   // ligth theme
-  --bg-color: #f9f9f9;
-  --nav-color: #e9e9e9;
-  --font-color: #213547;
-  --font-accent-color: rgba(60, 60, 60, 0.7);
+  --first-color: hsl(14, 98%, 50%);
+  --black-color: hsl(0, 0%, 0%);
+  --white-color: hsl(0, 0%, 95%);
+  --gray-color: hsl(0, 0%, 40%);
+  --title-color: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 87%);
+  --container-color: hsl(0, 0%, 83%);
+  --nav-color: hsl(0, 0%, 65%);
+  --effect-color: hsla(14, 98%, 50%, 0.2);
 
   // colors
-  --active-color: #42b883;
+  --light-text-color: hsl(0, 0%, 64%);
+  --nav-active-color: hsl(14, 98%, 43%);
 
   &.dark-theme {
     // dark theme
-    --bg-color: #1a1a1a;
-    --nav-color: #4f4f4f;
-    --font-color: rgba(235, 235, 235, 0.6);
-    --font-accent-color: rgba(255, 255, 255, 0.87);
+    --first-color: hsl(14, 80%, 50%);
+    --black-color: hsl(0, 0%, 18%);
+    --white-color: hsl(0, 0%, 85%);
+    --gray-color: hsl(0, 0%, 30%);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 70%);
+    --body-color: hsl(0, 0%, 8%);
+    --container-color: hsl(0, 0%, 12%);
+    --nav-color: hsl(0, 0%, 40%);
+    --effect-color: hsla(14, 70%, 50%, 0.2);
   }
 }
 
@@ -49,19 +62,48 @@
 
 #app {
   display: flex;
-  min-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
 }
 
 body {
   @include scroll;
-  background: var(--bg-color);
+  background: var(--body-color);
   overflow-x: hidden;
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 main {
-  position: relative;
   min-height: calc(100vh - 64px);
   width: 100%;
   flex-grow: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 12px auto 32px;
+  position: relative;
+  width: max-content;
+
+  &::after {
+    content: '';
+    width: 40px;
+    height: 28px;
+    background: var(--effect-color);
+    position: absolute;
+    top: -4px;
+    right: -8px;
+  }
+}
+
+a {
+  text-decoration: none;
 }

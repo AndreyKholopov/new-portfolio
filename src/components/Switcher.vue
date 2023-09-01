@@ -93,11 +93,11 @@ export default {
       left: 2px;
       width: 28px;
       height: 28px;
-      color: #1a1a1a;
+      color: var(--black-color);
     }
 
     &:checked ~ svg {
-      color: #f9f9f9;
+      color: var(--white-color);
     }
 
     &:focus {
@@ -105,7 +105,7 @@ export default {
     }
 
     &:focus-visible ~ .switcher__status {
-      box-shadow: 0 0 0 2px black;
+      box-shadow: 0 0 0 2px var(--black-color);
     }
   }
 

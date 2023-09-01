@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Library",
+    "about": {
+      "ru": "Приложение для заметок написанное с использованием HTML5, CSS3, React и адаптивной версткой",
+      "en": "Note taking app written with HTML5, CSS3, React and responsive layout"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/library",
+      "Site": "https://kholopov-library.netlify.app/"
+    },
+    "img": "Library.png"
+  },
+  {
+    "name": "Portfolio",
+    "about": {
+      "ru": "Старое портфолио написанное с использованием HTML5, SASS, Javascript и адаптивной версткой",
+      "en": "Old web portfolio written using HTML5, SASS, Javascript and adapted for mobile devices"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Beach-TETRIS",
+      "Site": "https://andreykholopov.github.io/TETRIS/"
+    },
+    "img": "Portfolio.png"
+  },
+  {
+    "name": "Tetris",
+    "about": {
+      "ru": "Тетрис написанный с использованием чистого (без использования Фреймворков) Javascript + HTML5",
+      "en": "Tetris written using pure (without using frameworks) Javascript + HTML5"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/TETRIS",
+      "Site": "https://andreykholopov.github.io/TETRIS/"
+    },
+    "img": "Tetris.jpg"
+  },
+  {
+    "name": "Beach Resort",
+    "about": {
+      "ru": "Интернет сайт созданный с использованием HTML5, CSS3, React и адаптированный под мобильные",
+      "en": "Website created using HTML5, CSS3, React and adapted for mobile devices"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Beach-Resort",
+      "Site": "https://react-beach-resort-by-kholopov.netlify.com/"
+    },
+    "img": "BeachResort.jpg"
+  },
+  {
+    "name": "AliExpress",
+    "about": {
+      "ru": "Интернет магазин созданный с использованием HTML5, CSS3, SASS, Javascript и адаптивной версткой",
+      "en": "Online store created using HTML5, CSS3, SASS, Javascript and adapted for mobile devices"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/AliExpress",
+      "Site": "https://aliexpress-by-kholopov.netlify.com/"
+    },
+    "img": "AliExpress.jpg"
+  },
+  {
+    "name": "Chikara Bar",
+    "about": {
+      "ru": "Простой сайт созданный с использованием HTML5, CSS3, SASS, Javascript и адаптивной версткой",
+      "en": "Simple site created using HTML5, CSS3, SASS, Javascript and adaptive layout"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Chikara_Bar",
+      "Site": "https://andreykholopov.github.io/Chikara_Bar/"
+    },
+    "img": "ChikaraBar.jpg"
+  },
+  {
+    "name": "GraffPink",
+    "about": {
+      "ru": "Простой лэндинг с использованием HTML5, CSS3, jQuery и адаптивной версткой",
+      "en": "Simple landing page using HTML5, CSS3, jQuery and adaptive layout"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Graff_Pink",
+      "Site": "https://andreykholopov.github.io/Graff_Pink/"
+    },
+    "img": "GraffPink.jpg"
+  },
+  {
+    "name": "Joomhost",
+    "about": {
+      "ru": "Простой лэндинг с использованием HTML5, CSS3, jQuery и адаптивной версткой",
+      "en": "Simple landing page using HTML5, CSS3, jQuery and adaptive layout"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Joomhost",
+      "Site": "https://andreykholopov.github.io/Joomhost/"
+    },
+    "img": "Joomhost.jpg"
+  },
+  {
+    "name": "Sennheiser",
+    "about": {
+      "ru": "Простой лэндинг созданный с использованием HTML5, CSS3, SASS, Javascript и адаптивной версткой",
+      "en": "Simple landing page created using HTML5, CSS3, SASS, Javascript and adaptive layout"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/sennheiser",
+      "Site": "https://andreykholopov.github.io/sennheiser/"
+    },
+    "img": "sennheiser.jpg"
+  },
+  {
+    "name": "React components",
+    "about": {
+      "ru": "Библиотека компонетов созданная с использованием React и Storybook",
+      "en": "Component library built using React and Storybook"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/react-tips",
+      "Site": "https://main--boisterous-pothos-623c83.netlify.app/"
+    },
+    "img": "ReactComponents.png"
+  },
+  {
+    "name": "Vue components",
+    "about": {
+      "ru": "Библиотека компонетов созданная с использованием Vue и Storybook",
+      "en": "Component library built using Vue and Storybook"
+    },
+    "links": {
+      "GitHub": "https://github.com/AndreyKholopov/Vue-tips",
+      "Site": "https://gleaming-kashata-b25ccb.netlify.app/"
+    },
+    "img": "VueComponents.png"
+  }
+]

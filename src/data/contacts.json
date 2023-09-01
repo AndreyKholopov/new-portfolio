@@ -1,0 +1,42 @@
+[
+  {
+    "name": "phone",
+    "icon": ["fas", "phone"],
+    "value": "+7(915)285-22-25",
+    "notFa": false
+  },
+  {
+    "name": "mail",
+    "icon": ["fas", "envelope"],
+    "value": "andrey.kholopov.work@gmail.com",
+    "notFa": false
+  },
+  {
+    "name": "GitHub",
+    "icon": ["fab", "github"],
+    "value": "https://github.com/AndreyKholopov",
+    "notFa": false
+  },
+  {
+    "name": "Telegram",
+    "icon": ["fab", "telegram"],
+    "value": "@KholopovAndrey",
+    "link": "https://t.me/KholopovAndrey",
+    "notFa": false
+  },
+  {
+    "name": "HH",
+    "icon": ["hh"],
+    "viewBox": "0 0 60 60",
+    "value": "https://hh.ru/resume/7cd5ee1cff07c16b470039ed1f344d38425549",
+    "notFa": true
+  },
+  {
+    "name": "CodeWars",
+    "icon": ["codewars"],
+    "viewBox": "0 0 663 655",
+    "value": "AndreyKholopov",
+    "link": "https://www.codewars.com/users/AndreyKholopov",
+    "notFa": true
+  }
+]

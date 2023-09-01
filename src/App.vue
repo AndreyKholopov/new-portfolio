@@ -1,13 +1,11 @@
 <script>
 import router from '@/router'
 import Nav from '@/layout/Nav.vue'
-import Header from '@/layout/Header.vue'
 import checkSwipeY from '@/api/checkSwipeY'
 
 export default {
   components: {
     Nav,
-    Header,
   },
 
   data() {
@@ -17,13 +15,29 @@ export default {
       previousScrollTopPosition: 0,
       scrollOnTop: true,
       scrollOnBottom: false,
+      lockScroll: false,
+      mobile: 480,
     }
   },
 
   created() {
     window.onwheel = (ev) => this.onwheel(ev)
+    window.onkeydown = (ev) => this.onkeydown(ev)
     checkSwipeY(this.goToNextPage, this.goToPreviousPage)
     window.onscroll = () => this.onScroll()
+
+    this.checkMobile()
+    onresize = () => this.checkMobile()
+  },
+
+  mounted() {
+    const initUserTheme =
+      localStorage.getItem('user-theme') || this.getMediaPreference()
+    const initUserLang =
+      localStorage.getItem('user-lang') || this.getLangPreference()
+
+    this.setTheme(initUserTheme)
+    this.setLang(initUserLang)
   },
 
   watch: {
@@ -31,23 +45,39 @@ export default {
       if (!from.name) return ''
       this.transitionName =
         to.meta.index > from.meta.index ? 'move-up' : 'move-down'
+
+      this.lockScroll = true
+
+      setTimeout(() => {
+        this.lockScroll = false
+      }, 600)
     },
   },
 
   methods: {
-    goToNextPage() {
-      const htmlHeight = document.documentElement.scrollHeight
-      const clientHeight = document.documentElement.clientHeight
+    checkMobile() {
+      window.innerWidth > this.mobile
+        ? this.$isMobile.setValue(false)
+        : this.$isMobile.setValue(true)
+    },
 
-      if (this.scrollOnBottom || htmlHeight === clientHeight) {
-        const nextPage = this.navList[this.$route.meta.index + 1]
-        if (nextPage) router.push({ name: nextPage.name })
+    goToNextPage() {
+      if (!this.lockScroll) {
+        const htmlHeight = document.documentElement.scrollHeight
+        const clientHeight = document.documentElement.clientHeight
+
+        if (this.scrollOnBottom || htmlHeight === clientHeight) {
+          const nextPage = this.navList[this.$route.meta.index + 1]
+
+          if (nextPage) router.push({ name: nextPage.name })
+        }
       }
     },
 
     goToPreviousPage() {
-      if (this.scrollOnTop) {
+      if (!this.lockScroll && this.scrollOnTop) {
         const previousPage = this.navList[this.$route.meta.index - 1]
+
         if (previousPage) router.push({ name: previousPage.name })
       }
     },
@@ -55,6 +85,11 @@ export default {
     onwheel(ev) {
       if (ev.wheelDeltaY > 0) this.goToPreviousPage()
       else if (ev.wheelDeltaY < 0) this.goToNextPage()
+    },
+
+    onkeydown(ev) {
+      if (ev.code === 'ArrowUp') this.goToPreviousPage()
+      else if (ev.code === 'ArrowDown') this.goToNextPage()
     },
 
     onScroll() {
@@ -79,6 +114,34 @@ export default {
 
       this.previousScrollTopPosition = scrollTopPosition
     },
+
+    setTheme(theme) {
+      localStorage.setItem('user-theme', theme)
+      document.documentElement.className = `${theme}-theme`
+      this.$theme.setValue(theme)
+    },
+
+    setLang(lang) {
+      localStorage.setItem('user-lang', lang)
+      document.documentElement.lang = lang
+      this.$lang.setValue(lang)
+    },
+
+    getMediaPreference() {
+      const hasDarkPreference = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+
+      if (hasDarkPreference) return 'dark'
+      else return 'light'
+    },
+
+    getLangPreference() {
+      const langPreference = navigator.language || navigator.userLanguage
+
+      if (langPreference === 'ru-RU') return 'ru'
+      else return 'en'
+    },
   },
 }
 </script>
@@ -86,61 +149,59 @@ export default {
 <template>
   <Nav :list="navList"></Nav>
 
-  <Header></Header>
-
   <main>
     <RouterView v-slot="{ Component }">
-      <transition :name="transitionName">
+      <transition :name="transitionName" mode="out-in">
         <component :is="Component" :key="$route.path" />
       </transition>
     </RouterView>
   </main>
 </template>
 
-<style lang="scss">
-.move-up {
+<style lang="scss" scoped>
+.move-up,
+.move-down {
+  &-enter-active,
+  &-leave-active {
+    transition: transform 0.3s ease-in-out;
+  }
+
   &-enter-active {
-    position: absolute;
-    transform-origin: bottom;
-    animation: moveEnter 0.5s ease-in;
+    height: 100vh;
+    z-index: 50;
   }
 
   &-leave-active {
-    position: absolute;
-    transform-origin: top;
-    animation: moveLeave 0.5s ease-in;
+    z-index: 40;
+  }
+}
+.move-up {
+  &-enter-from {
+    transform: translateY(100%);
+  }
+
+  &-enter-to,
+  &-leave-from {
+    transform: translateY(0);
+  }
+
+  &-leave-to {
+    transform: translateY(-100%);
   }
 }
 
 .move-down {
-  &-enter-active {
-    position: absolute;
-    transform-origin: top;
-    animation: moveEnter 0.5s ease-in;
+  &-enter-from {
+    transform: translateY(-100%);
   }
 
-  &-leave-active {
-    position: absolute;
-    transform-origin: bottom;
-    animation: moveLeave 0.5s ease-in;
+  &-enter-to,
+  &-leave-from {
+    transform: translateY(0);
   }
-}
 
-@keyframes moveEnter {
-  0% {
-    transform: scaleY(0);
-  }
-  85% {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes moveLeave {
-  0% {
-    transform: scaleY(1);
-  }
-  85% {
-    transform: scaleY(0);
+  &-leave-to {
+    transform: translateY(100%);
   }
 }
 </style>

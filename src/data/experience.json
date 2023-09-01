@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Современные технологии (Новый Диск)",
+    "description": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и доработкой сайтов: http://copp.volganet.ru/, http://cp.copp38.ru/ и http://cp.copp69.ru/. Разрабатывал с нуля проекты https://copp52.ru/ и http://smart-epk.nd.ru/.",
+    "link": "ndplay.ru/",
+    "img": "nd.png",
+    "dateRange": [
+      [2020, 2],
+      [2021, 3]
+    ]
+  },
+  {
+    "name": "iBRUSH",
+    "description": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и разработкой с нуля. Работал над сайтом для национального агентство развития квалификаций (https://ork.nark.ru/#/), а также правил несколько других проектов. Например сайт компании https://www.ibrush.ru/ или https://www.stilkuhni.ru/.",
+    "link": "www.ibrush.ru/",
+    "img": "iBrush.jpeg",
+    "dateRange": [
+      [2021, 8],
+      [2021, 10]
+    ]
+  },
+  {
+    "name": "Системы распределенного реестра (MASTERCHAIN)",
+    "description": "Разрабатывал веб-интерфейсы на фреймворке Vue.js и react + typescript. Работал над несколькими проектами связаными с финтехом и блокчейном.",
+    "link": "www.dltru.org",
+    "img": "masterChain.jpeg",
+    "dateRange": [
+      [2021, 11],
+      [2022, 6]
+    ]
+  }
+]

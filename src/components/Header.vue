@@ -32,49 +32,20 @@ export default {
           icon: 'e',
         },
       ],
-      userTheme: 'light',
-      userLang: 'ru',
     }
-  },
-
-  mounted() {
-    const initUserTheme =
-      localStorage.getItem('user-theme') || this.getMediaPreference()
-    const initUserLang =
-      localStorage.getItem('user-lang') || this.getLangPreference()
-
-    this.setTheme(initUserTheme)
-    this.setLang(initUserLang)
   },
 
   methods: {
     setTheme(theme) {
       localStorage.setItem('user-theme', theme)
-      this.userTheme = theme
       document.documentElement.className = `${theme}-theme`
+      this.$theme.setValue(theme)
     },
 
     setLang(lang) {
       localStorage.setItem('user-lang', lang)
-      this.userLang = lang
       document.documentElement.lang = lang
       this.$lang.setValue(lang)
-    },
-
-    getMediaPreference() {
-      const hasDarkPreference = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-
-      if (hasDarkPreference) return 'dark'
-      else return 'light'
-    },
-
-    getLangPreference() {
-      const langPreference = navigator.language || navigator.userLanguage
-
-      if (langPreference === 'ru-RU') return 'ru'
-      else return 'en'
     },
   },
 }
@@ -84,14 +55,14 @@ export default {
   <Switcher
     switcherClass="switch-color"
     :inputs="colorScheme"
-    :value="userTheme"
+    :value="this.$theme.value"
     @checked="setTheme"
   ></Switcher>
 
   <Switcher
     switcherClass="switch-lang"
     :inputs="langScheme"
-    :value="userLang"
+    :value="this.$lang.value"
     @checked="setLang"
   ></Switcher>
 </template>
