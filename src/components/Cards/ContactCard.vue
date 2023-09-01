@@ -58,7 +58,7 @@ export default {
     </div>
 
     <a :href="getLink()" target="_blank">
-      <Button class="card__button" solid>↗</Button>
+      <Button class="card__button" solid>&#11016;</Button>
     </a>
   </div>
 </template>
@@ -107,7 +107,7 @@ export default {
 
   &__title {
     padding: 24px 32px;
-    text-wrap: nowrap;
+    white-space: nowrap;
     margin: 0;
     color: var(--black-color);
 

@@ -1,8 +1,11 @@
 [
   {
     "name": "Современные технологии (Новый Диск)",
-    "description": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и доработкой сайтов: http://copp.volganet.ru/, http://cp.copp38.ru/ и http://cp.copp69.ru/. Разрабатывал с нуля проекты https://copp52.ru/ и http://smart-epk.nd.ru/.",
-    "link": "ndplay.ru/",
+    "description": {
+      "ru": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и доработкой сайтов: http://copp.volganet.ru/, http://cp.copp38.ru/ и http://cp.copp69.ru/. Разрабатывал с нуля проекты https://copp52.ru/ и http://smart-epk.nd.ru/.",
+      "en": "Developed websites on the Vue.js framework. Engaged in support and refinement of sites: http://copp.volganet.ru/, http://cp.copp38.ru/ and http://cp.copp69.ru/. Developed projects https://copp52.ru/ and http://smart-epk.nd.ru/ from scratch."
+    },
+    "link": "https://ndplay.ru/",
     "img": "nd.png",
     "dateRange": [
       [2020, 2],
@@ -11,8 +14,11 @@
   },
   {
     "name": "iBRUSH",
-    "description": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и разработкой с нуля. Работал над сайтом для национального агентство развития квалификаций (https://ork.nark.ru/#/), а также правил несколько других проектов. Например сайт компании https://www.ibrush.ru/ или https://www.stilkuhni.ru/.",
-    "link": "www.ibrush.ru/",
+    "description": {
+      "ru": "Разрабатывал веб-сайты на фреймворке Vue.js. Занимался поддержкой и разработкой с нуля. Работал над сайтом для национального агентство развития квалификаций (https://ork.nark.ru/#/), а также правил несколько других проектов. Например сайт компании https://www.ibrush.ru/ или https://www.stilkuhni.ru/.",
+      "en": "Developed websites on the Vue.js framework. Engaged in support and development from scratch. Worked on a website for the National Agency for the Development of Qualifications (https://ork.nark.ru/#/), as well as managed several other projects. For example, the company's website https://www.ibrush.ru/ or https://www.stilkuhni.ru/."
+    },
+    "link": "https://www.ibrush.ru/",
     "img": "iBrush.jpeg",
     "dateRange": [
       [2021, 8],
@@ -21,8 +27,11 @@
   },
   {
     "name": "Системы распределенного реестра (MASTERCHAIN)",
-    "description": "Разрабатывал веб-интерфейсы на фреймворке Vue.js и react + typescript. Работал над несколькими проектами связаными с финтехом и блокчейном.",
-    "link": "www.dltru.org",
+    "description": {
+      "ru": "Разрабатывал веб-интерфейсы на фреймворке Vue.js и react + typescript. Работал над несколькими проектами связаными с финтехом и блокчейном.",
+      "en": "Developed web interfaces on the Vue.js framework and react + typescript. Worked on several projects related to fintech and blockchain."
+    },
+    "link": "https://www.dltru.org/",
     "img": "masterChain.jpeg",
     "dateRange": [
       [2021, 11],

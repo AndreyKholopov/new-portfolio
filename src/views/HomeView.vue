@@ -38,31 +38,55 @@ export default {
     <div class="home-page__content">
       <h2>{{ pageName[this.$lang.value] }}</h2>
 
-      <EnSurname v-if="this.$lang.value === 'en'" class="home-page__surname"></EnSurname>
+      <EnSurname
+        v-if="this.$lang.value === 'en'"
+        class="home-page__surname"
+      ></EnSurname>
       <EnName v-if="this.$lang.value === 'en'" class="home-page__name"></EnName>
-      
-      <RuSurname v-if="this.$lang.value === 'ru'" class="home-page__surname"></RuSurname>
-      <RuName v-if="this.$lang.value === 'ru'" class="home-page__name"></RuName>
 
+      <RuSurname
+        v-if="this.$lang.value === 'ru'"
+        class="home-page__surname"
+      ></RuSurname>
+      <RuName v-if="this.$lang.value === 'ru'" class="home-page__name"></RuName>
     </div>
 
     <Button class="help-button" ripple round @click="showNotification = true">
       ?
     </Button>
 
-    <Notification v-model:isShow="showNotification">
-      <p style="min-width: 300px">
-        Вы можете переключаться между страницами с помощью:
-      </p>
+    <Notification
+      v-model:isShow="showNotification"
+    >
+      <div v-if="this.$lang.value === 'ru'">
+        <p style="min-width: 300px">
+          Вы можете переключаться между страницами с помощью:
+        </p>
+
+        <ol>
+          <li>Кнопок на навигационной панели слева;</li>
+          <li>Клавиш верх и вниз на клавиатуре пролистав до конца страницы;</li>
+          <li>
+            Свайпа на мобильных устройствах или колеса мыши на пк пролистав до
+            конца страницы.
+          </li>
+        </ol>
+      </div>
+
+      <div v-if="this.$lang.value === 'en'">
+        <p style="min-width: 300px">You can switch between pages using:</p>
 
       <ol>
-        <li>Кнопок на навигационной панели слева;</li>
-        <li>Клавиш верх и вниз на клавиатуре пролистав до конца страницы;</li>
+        <li>Buttons on the navigation bar;</li>
         <li>
-          Свайпа на мобильных устройствах или колеса мыши на пк пролистав до
-          конца страницы.
+          Up and down keys on the keyboard to scroll to the bottom of the page;
+        </li>
+        <li>
+          Swipe on mobile devices or mouse wheel on PC by scrolling to the
+          bottom of the page.
         </li>
       </ol>
+      </div>
     </Notification>
   </div>
 </template>

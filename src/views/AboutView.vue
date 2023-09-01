@@ -12,15 +12,15 @@ export default {
         this.$lang.value === 'ru'
           ? [
               `Я <b>Холопов Андрей Андреевич</b>. Мне ${this.howOld} лет и я <b>фронтенд разработчик</b>. В основном работаю с <b>Vue.js</b> и <b>React</b>, а также имею опыт с <b>Svelte</b>. Без проблем читаю документацию на английском. На хорошем уровне владею Photoshop и Figma.`,
-              'Имею неполное высшее. Ушел с 3 курса Московоского Авиационного Института.',
+              'Имею неполное высшее. Доучился до 3 курса Московского Авиационного Института.',
               'Проходил службу в армии. Во время службы получил управленческий опыт работы на должности заместителя командира взвода роты молодого пополнения (КМБ) и начальника бригадной смены.',
-              'Мне хочется и нравится развиваться в данной сфере.',
+              'Мне хочется и нравится развиваться в сфере фронтенда и веб разработки.',
             ]
           : [
-              `I am <b>Kholopov Andrey Andreevich</b>. I am ${this.howOld} years old and I am a <b>front-end developer</b>. I mainly work with <b>Vue.js</b> and <b>React</b>, and I also have experience with <b>Svelte</b>. I read the documentation in English without any problems. I have good knowledge of Photoshop and Figma.`,
-              'I have an incomplete higher education. He left the 3rd year of the Moscow Aviation Institute.',
-              'i am served in the army. During his service, he gained managerial experience as a deputy platoon commander of a young replenishment company (KMB) and a brigade shift leader.',
-              'I want and like to develop in this area.',
+              `I am <b>Kholopov Andrey Andreevich</b>. ${this.howOld} years old.  I work as a <b>front-end developer</b>. Mainly work with <b>Vue.js</b> and <b>React</b>, and also have experience with <b>Svelte</b>. Read the documentation in English without any problems. I have good knowledge of Photoshop and Figma.`,
+              'I have an incomplete higher education, but left on 3rd year of study in the Moscow Aviation Institute.',
+              'i am served in the army. During my service, when gained managerial experience as a deputy platoon commander of a young replacement company and a brigade shift leader.',
+              'I want and like to develop in the field of front-end and web development.',
             ]
       return text.reduce((acc, el) => acc + '<br /><br />' + el)
     },

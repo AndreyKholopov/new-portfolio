@@ -24,6 +24,7 @@ export default {
         v-for="card in experience"
         :key="card.name"
         v-bind="card"
+        :description="card.description[this.$lang.value]"
       ></ExperienceCard>
     </div>
   </div>

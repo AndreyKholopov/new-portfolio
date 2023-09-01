@@ -1,5 +1,10 @@
 <script>
+import Button from '@/components/Button.vue'
 export default {
+  components: {
+    Button,
+  },
+
   props: {
     position: {
       validator(value) {
@@ -19,16 +24,29 @@ export default {
     },
   },
 
+  data() {
+    return {
+      timer: {}
+    }
+  },
+
   emits: ['update:isShow'],
 
   watch: {
     isShow(val) {
       if (val)
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           this.$emit('update:isShow', false)
         }, 5000)
     },
   },
+
+  methods: {
+    closeNotification() {
+      clearTimeout(this.timer)
+      this.$emit('update:isShow', false)
+    }
+  }
 }
 </script>
 
@@ -39,6 +57,7 @@ export default {
       class="notification"
       :class="`notification__${position}`"
     >
+      <Button class="notification__close-button" round @click="closeNotification">&#215;</Button>
       <slot />
     </div>
   </transition>
@@ -53,6 +72,17 @@ export default {
   width: min-content;
   z-index: 101;
   color: var(--gray-color);
+
+  &__close-button {
+    position: absolute;
+    right: 8px;
+    padding: 0 6px 3px;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 0;
+    color: var(--black-color);
+    border-color: var(--black-color);
+  }
 
   &__bottom-right {
     right: 8px;

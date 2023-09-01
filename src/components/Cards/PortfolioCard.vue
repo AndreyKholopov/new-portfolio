@@ -41,7 +41,7 @@ export default {
     <a class="card__image_wrap" :href="links['Site']" target="_blank">
       <img class="card__image" :src="`/images/${img}`" :alt="img" />
 
-      <Button class="card__image_button" solid>↗</Button>
+      <Button class="card__image_button" solid>&#11016;</Button>
     </a>
 
     <div class="card__wrap">

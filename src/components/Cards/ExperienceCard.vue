@@ -39,7 +39,7 @@ export default {
   methods: {
     getDate(range) {
       let date = new Date(range)
-      date = date.toLocaleString('ru', {
+      date = date.toLocaleString(this.$lang.value, {
         year: 'numeric',
         month: 'long',
       })
@@ -54,7 +54,7 @@ export default {
     <a class="card__image_wrap" :href="link" target="_blank">
       <img class="card__image" :src="`/images/${img}`" :alt="img" />
 
-      <Button class="card__image_button" solid>↗</Button>
+      <Button class="card__image_button" solid>&#11016;</Button>
     </a>
 
     <div class="card__wrap">
@@ -79,24 +79,22 @@ export default {
 
   &__image {
     width: 200px;
-    background: #fff;
-
-    @media (max-width: 750px) {
-      width: 100%;
-    }
-
-    &:hover {
-      ~ .card__image_button {
-        background: var(--first-color);
-      }
-    }
 
     &_wrap {
+      display: flex;
+      justify-content: center;
       position: relative;
+      background: #fff;
 
       @media (max-width: 750px) {
         margin-bottom: 40px;
         width: 100%;
+      }
+
+      &:hover {
+        .card__image_button {
+          background: var(--first-color);
+        }
       }
     }
 
