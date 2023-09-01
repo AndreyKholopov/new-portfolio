@@ -66,9 +66,9 @@ export default {
       >
         <font-awesome-icon :icon="['fas', item.meta.icon]" />
 
-        <span v-if="this.$isMobile.value">{{
-          item.meta.name[this.$lang.value]
-        }}</span>
+        <span v-if="this.$isMobile.value">
+          {{ item.meta.name[this.$lang.value] }}
+        </span>
       </RouterLink>
     </nav>
   </aside>

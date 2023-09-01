@@ -64,7 +64,7 @@ export default {
     goToNextPage() {
       if (!this.lockScroll) {
         const htmlHeight = document.documentElement.scrollHeight
-        const clientHeight = document.documentElement.clientHeight
+        const clientHeight = window.innerHeight
 
         if (this.scrollOnBottom || htmlHeight === clientHeight) {
           const nextPage = this.navList[this.$route.meta.index + 1]
@@ -98,7 +98,7 @@ export default {
 
       const scrollTopPosition = window.scrollY
       const htmlHeight = document.documentElement.scrollHeight
-      const clientHeight = document.documentElement.clientHeight
+      const clientHeight = window.innerHeight
 
       if (
         this.previousScrollTopPosition > scrollTopPosition &&
