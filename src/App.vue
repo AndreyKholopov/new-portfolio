@@ -50,7 +50,7 @@ export default {
 
       setTimeout(() => {
         this.lockScroll = false
-      }, 600)
+      }, 1000)
     },
   },
 
