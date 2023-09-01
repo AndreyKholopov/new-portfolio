@@ -109,7 +109,7 @@ export default {
     width: 50%;
   }
 
-  &__name {
+  &__name{
     margin-top: 32px;
     min-width: 270px;
     width: 38%;
