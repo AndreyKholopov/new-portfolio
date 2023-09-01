@@ -71,6 +71,7 @@ body {
   background: var(--body-color);
   overflow-x: hidden;
   font-family: 'Bai Jamjuree', sans-serif;
+  overscroll-behavior: contain;
 }
 
 main {
