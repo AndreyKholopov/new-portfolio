@@ -29,7 +29,10 @@ export default {
   methods: {
     getHowOld() {
       const date = new Date()
-      return date.getFullYear() - 1994
+      const birhdayDate = new Date(1994, 10, 25)
+      const res = new Date(date - birhdayDate)
+
+      return ~~(res / (1000 * 3600 * 24 * 365))
     },
   },
 }
