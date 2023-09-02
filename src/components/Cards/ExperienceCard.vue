@@ -36,6 +36,20 @@ export default {
     }
   },
 
+  computed: {
+    descriptionWithLink() {
+      return this.description
+        .split(' ')
+        .map((el) => {
+          if (!el.includes('http')) return el
+
+          const res = el.replaceAll(/,|\(|\)/g, '')
+          return `<a href="${res}" target="blank">${el}</a>`
+        })
+        .join(' ')
+    },
+  },
+
   methods: {
     getDate(range) {
       let date = new Date(range)
@@ -60,10 +74,26 @@ export default {
     <div class="card__wrap">
       <h3 class="card__title">{{ name }}</h3>
       <p class="card__date">{{ startDate }} — {{ finishDate }}</p>
-      <p class="card__description">{{ description }}</p>
+      <p class="card__description" v-html="descriptionWithLink"></p>
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.card {
+  &__description {
+    a {
+      font-weight: bold;
+      color: var(--black-color);
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--first-color);
+      }
+    }
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 .card {
