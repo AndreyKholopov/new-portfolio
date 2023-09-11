@@ -21,10 +21,12 @@ export default {
   },
 
   created() {
-    window.onwheel = (ev) => this.onwheel(ev)
-    window.onkeydown = (ev) => this.onkeydown(ev)
-    checkSwipeY(this.goToNextPage, this.goToPreviousPage)
-    window.onscroll = () => this.onScroll()
+    // Переключение страниц при скролле/свайпе
+    // вырезанно из-за жалоб рекрутеров
+    // window.onwheel = (ev) => this.onwheel(ev)
+    // window.onkeydown = (ev) => this.onkeydown(ev)
+    // checkSwipeY(this.goToNextPage, this.goToPreviousPage)
+    // window.onscroll = () => this.onScroll()
 
     this.checkMobile()
     onresize = () => this.checkMobile()

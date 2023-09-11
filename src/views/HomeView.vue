@@ -51,11 +51,11 @@ export default {
       <RuName v-if="this.$lang.value === 'ru'" class="home-page__name"></RuName>
     </div>
 
-    <Button class="help-button" ripple round @click="showNotification = true">
+    <!-- <Button class="help-button" ripple round @click="showNotification = true">
       ?
-    </Button>
+    </Button> -->
 
-    <Notification
+    <!-- <Notification
       v-model:isShow="showNotification"
     >
       <div v-if="this.$lang.value === 'ru'">
@@ -87,7 +87,7 @@ export default {
         </li>
       </ol>
       </div>
-    </Notification>
+    </Notification> -->
   </div>
 </template>
 
