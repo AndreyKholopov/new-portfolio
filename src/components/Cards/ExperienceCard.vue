@@ -68,7 +68,9 @@ export default {
     <a class="card__image_wrap" :href="link" target="_blank">
       <img class="card__image" :src="`/images/${img}`" :alt="img" />
 
-      <Button class="card__image_button" solid>&#11016;</Button>
+      <Button class="card__image_button" solid>
+        <font-awesome-icon :icon="['fas', 'arrow-up-long']" />
+      </Button>
     </a>
 
     <div class="card__wrap">
@@ -130,11 +132,15 @@ export default {
 
     &_button {
       position: absolute;
-      padding: 20px 28px 20px 28px;
-      bottom: -40px;
+      padding: 10px 20px;
+      bottom: -16px;
       right: -16px;
       font-size: 32px;
       aspect-ratio: 1/1;
+
+      svg {
+        transform: rotate(45deg);
+      }
     }
   }
 

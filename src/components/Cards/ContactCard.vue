@@ -58,7 +58,9 @@ export default {
     </div>
 
     <a :href="getLink()" target="_blank">
-      <Button class="card__button" solid>&#11016;</Button>
+      <Button class="card__button" solid>
+        <font-awesome-icon :icon="['fas', 'arrow-up-long']" />
+      </Button>
     </a>
   </div>
 </template>
@@ -100,9 +102,13 @@ export default {
   overflow: hidden;
 
   &__button {
-    padding: 20px 28px 20px 28px;
+    padding: 20px 28px;
     font-size: 32px;
     aspect-ratio: 1/1;
+
+    svg {
+      transform: rotate(45deg);
+    }
   }
 
   &__title {

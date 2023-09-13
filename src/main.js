@@ -21,6 +21,7 @@ import {
   faEnvelope,
   faAddressCard,
   faPersonDigging,
+  faArrowUpLong,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -38,7 +39,8 @@ library.add(
   faGithub,
   faTelegram,
   faAddressCard,
-  faPersonDigging
+  faPersonDigging,
+  faArrowUpLong
 )
 
 const app = createApp(App)
